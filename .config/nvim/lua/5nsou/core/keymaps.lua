@@ -39,9 +39,7 @@ vim.keymap.set("n", "<leader>qf", function()
 end)
 
 -- Move a selection of lines in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- When searching and moving to the next match, center screen
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -111,3 +109,5 @@ end, { noremap = true, silent = true })
 
 -- g_
 vim.keymap.set("n", ";", "g_a<Space>")
+
+
