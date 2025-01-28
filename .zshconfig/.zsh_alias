@@ -3,6 +3,7 @@
 ## ZSHRC
 alias q='exit'
 alias zconfig='v ~/.zshrc'
+alias zvconf='v ~/.dotfiles/.zshconfig/.zsh_alias'
 alias zso='source ~/.zshrc'
 
 ## NEOVIM
@@ -14,6 +15,7 @@ alias vrem='v ~/.config/nvim/lua/5nsou/core/keymaps.lua'
 ## TMUX
 alias txks='tmux kill-session -t'
 alias tas='tmux a -t'
+alias td="tmux detach"
 
 ## ARCH LINUX
 alias install="sudo pacman -S"
@@ -22,6 +24,9 @@ alias upgrade="sudo pacman -Syu"
 alias uninstall="sudo pacman -Rns"
 alias search="sudo pacman -Qs"
 alias list="sudo pacman -Q"
+
+alias aur="sudo paru -S"
+alias auremove="sudo paru -Rns"
 
 
 ## YT-DLP
