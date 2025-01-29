@@ -1,0 +1,4 @@
+
+
+alias sehnsucht="mv ~/.dotfiles/.gitconfig ~/.dotfiles/.gitconfig_5nsou; mv ~/.dotfiles/.gitconfig_sehnsucht ~/.dotfiles/.gitconfig"
+alias 5nsou="mv ~/.dotfiles/.gitconfig ~/.dotfiles/.gitconfig_sehnsucht; mv ~/.dotfiles/.gitconfig_5nsou ~/.dotfiles/.gitconfig"
