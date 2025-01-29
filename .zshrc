@@ -1,7 +1,7 @@
 export PATH="/opt/homebrew/bin:$PATH"
 neofetch --ascii ~/.config/neofetch/ascii.txt
 
-for file in /home/snau/.dotfiles/.zshconfig/.*(.); do
+for file in ~/.dotfiles/.zshconfig/.*(.); do
   source "$file"
 done
 
