@@ -35,3 +35,7 @@ alias download='yt-dlp -f "bestvideo+bestaudio"'
 
 ## MISC
 alias next-tauri-template='git clone https://github.com/justin-huiyun-lee/tauri-next-template'
+
+
+
+## SWITCH GITHUB PROFILES
