@@ -1,0 +1,7 @@
+
+[user]
+    name = justin-huiyun-lee
+    email = justin.huiyun.lee@gmail.com
+
+[credential]
+    helper = cache --timeout=604800

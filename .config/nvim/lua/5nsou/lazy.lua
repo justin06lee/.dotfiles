@@ -23,3 +23,11 @@ require("lazy").setup({ { import = "5nsou.plugins" }, { import = "5nsou.plugins.
 		notify = false,
 	},
 })
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.prettier, -- Ensure Prettier is enabled
+    },
+})

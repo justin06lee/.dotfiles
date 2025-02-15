@@ -30,12 +30,12 @@ alias auremove="sudo paru -Rns"
 
 
 ## YT-DLP
-alias download='yt-dlp -f "bestvideo+bestaudio"'
+alias download='yt-dlp -f "bv*+ba/best" -S ext:mp4 --merge-output-format mp4'
 
 
 ## MISC
 alias next-tauri-template='git clone https://github.com/justin-huiyun-lee/tauri-next-template'
 
 
-
-## SWITCH GITHUB PROFILES
+## PYTHON
+alias activate='source venv/bin/activate'
