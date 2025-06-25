@@ -1,7 +1,7 @@
 
 [user]
     name = sehnsucht-nach-einer-ehefrau
-    email = sehnsucht.dev@proton.me
+    email = sehnsucht.nach.einer.ehefrau@gmail.com
 
 [credential]
     helper = cache --timeout=604800

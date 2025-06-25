@@ -1,3 +1,6 @@
 
-alias git-init-sehnsucht='git init && git config --local include.path ~/.config/git/config-sehnsucht'
-alias git-init-justin='git init && git config --local include.path ~/.config/git/config-justin'
+alias git-use-justin='git config --local user.name "justin-huiyun-lee" && git config --local user.email "justin.huiyun.lee@gmail.com" && git remote set-url origin git@github-justin:justin-huiyun-lee/$(basename `git rev-parse --show-toplevel`).git'
+alias git-use-sehnsucht='git config --local user.name "sehnsucht-nach-einer-ehefrau" && git config --local user.email "sehnsucht.nach.einer.ehefrau@gmail.com" && git remote set-url origin git@github.com:sehnsucht-nach-einer-ehefrau/$(basename `git rev-parse --show-toplevel`).git'
+alias git-use-thaumatech='git config --local user.name "sehnsucht-nach-einer-ehefrau" && git config --local user.email "sehnsucht.nach.einer.ehefrau@gmail.com" && git remote set-url origin git@github.com:Thaumatech/$(basename `git rev-parse --show-toplevel`).git'
+alias git-use-noblesse='git config --local user.name "sehnsucht-nach-einer-ehefrau" && git config --local user.email "sehnsucht.nach.einer.ehefrau@gmail.com" && git remote set-url origin git@github.com:NoblesseObliged/$(basename `git rev-parse --show-toplevel`).git'
+alias git-use-thersp='git config --local user.name "sehnsucht-nach-einer-ehefrau" && git config --local user.email "sehnsucht.nach.einer.ehefrau@gmail.com" && git remote set-url origin git@github.com:The-Root-Spell-Project/$(basename `git rev-parse --show-toplevel`).git'

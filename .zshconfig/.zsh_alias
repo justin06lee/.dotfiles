@@ -3,7 +3,7 @@
 ## ZSHRC
 alias q='exit'
 alias zconfig='v ~/.zshrc'
-alias zvconf='v ~/.dotfiles/.zshconfig/.zsh_alias'
+alias zrem='v ~/.dotfiles/.zshconfig/.zsh_alias'
 alias zso='source ~/.zshrc'
 
 ## NEOVIM
@@ -16,6 +16,7 @@ alias vrem='v ~/.config/nvim/lua/5nsou/core/keymaps.lua'
 alias txks='tmux kill-session -t'
 alias tas='tmux a -t'
 alias td="tmux detach"
+alias tls="tmux ls"
 
 ## ARCH LINUX
 alias install="sudo pacman -S"
@@ -31,6 +32,11 @@ alias auremove="sudo paru -Rns"
 
 ## YT-DLP
 alias download='yt-dlp -f "bv*+ba/best" -S ext:mp4 --merge-output-format mp4'
+alias download-audio='yt-dlp -f "ba" --extract-audio --audio-format mp3'
+alias download-video='yt-dlp -f "bv" -S ext:mp4 --merge-output-format mp4'
+
+## GIT
+alias logn='git --no-pager log --graph --oneline -n 10'
 
 
 ## MISC

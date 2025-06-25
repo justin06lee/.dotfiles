@@ -4,7 +4,8 @@ vim.g.mapleader = " "
 vim.api.nvim_create_autocmd("textyankpost", {
 	desc = "highlight when yanking text",
 	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function() vim.highlight.on_yank()
+	callback = function()
+		vim.highlight.on_yank()
 	end,
 })
 -- Go back to nvim default file tree vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -18,7 +19,8 @@ vim.keymap.set("n", "<leader>pf", function()
 end)
 
 vim.keymap.set("n", "<leader>ps", function()
-	vim.cmd("Telescope live_grep") end)
+	vim.cmd("Telescope live_grep")
+end)
 
 -- wipe the entire file (delete all lines)
 vim.keymap.set("n", "<leader>wipe", 'GVgg0"_d') -- copy the entire file to clipboard
@@ -35,7 +37,8 @@ vim.keymap.set("n", "<leader>qf", function()
 end)
 
 -- Move a selection of lines in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- When searching and moving to the next match, center screen vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- When searching and moving to the next match, center screen vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Paste without copying the text
@@ -85,9 +88,6 @@ vim.keymap.set("n", "<leader>atw", function()
 end)
 
 vim.keymap.set("n", "<leader>dtw", function()
-	-- Disable Copilot
-	vim.cmd("Copilot disable")
-
 	-- Set textwidth to 130
 	vim.o.textwidth = 130
 
@@ -103,30 +103,35 @@ end, { noremap = true, silent = true })
 
 -- g_
 vim.keymap.set("n", ";", "g_")
+vim.keymap.set("v", ";", "g_")
 
 -- Define the function to comment selected lines
 function python_comment_lines(comment_string)
-  -- Get the current visual selection start and end positions
-  local start_pos = vim.fn.getpos("'<")
-  local end_pos = vim.fn.getpos("'>")
+	-- Get the current visual selection start and end positions
+	local start_pos = vim.fn.getpos("'<")
+	local end_pos = vim.fn.getpos("'>")
 
-  -- Extract line numbers from the start and end positions
-  local start_line = start_pos[2]
-  local end_line = end_pos[2]
+	-- Extract line numbers from the start and end positions
+	local start_line = start_pos[2]
+	local end_line = end_pos[2]
 
-  -- Ensure we go in the correct direction for line iteration
-  if start_line > end_line then
-    start_line, end_line = end_line, start_line
-  end
+	-- Ensure we go in the correct direction for line iteration
+	if start_line > end_line then
+		start_line, end_line = end_line, start_line
+	end
 
-  -- Loop through each selected line and prepend '#' symbol
-  for line_num = start_line, end_line do
-    local line = vim.fn.getline(line_num)
-    -- Prepend '#' symbol if not already commented
-    if not line:match("^%s*#") then
-      vim.fn.setline(line_num, comment_string .. line)
-    end
-  end
+	-- Loop through each selected line and prepend '#' symbol
+	for line_num = start_line, end_line do
+		local line = vim.fn.getline(line_num)
+		-- Prepend '#' symbol if not already commented
+		if not line:match("^%s*#") then
+			vim.fn.setline(line_num, comment_string .. line)
+		end
+
+		if line:match("^%s*#") then
+			vim.fn.setline(line_num, string.sub(line, string.len(comment_string) + 1))
+		end
+	end
 end
 
 -- Set keymap to call the function in visual mode (Y to comment)
