@@ -1,0 +1,30 @@
+## ZSHRC
+alias q='exit'
+alias zconfig='v ~/.zshrc'
+alias zrem='v ~/.dotfiles/.zshconfig/.zsh_alias'
+alias zso='source ~/.zshrc'
+
+## TMUX
+alias txks='tmux kill-session -t'
+alias tas='tmux a -t'
+alias td="tmux detach"
+alias tls="tmux ls"
+
+## ARCH LINUX
+alias install="sudo pacman -S"
+alias update="sudo pacman -Syu"
+alias upgrade="sudo pacman -Syu"
+alias uninstall="sudo pacman -Rns"
+alias search="sudo pacman -Qs"
+alias list="sudo pacman -Q"
+
+alias aur="sudo paru -S"
+alias auremove="sudo paru -Rns"
+
+## YT-DLP
+alias download='yt-dlp -f "bv*+ba/best" -S ext:mp4 --merge-output-format mp4'
+alias download-audio='yt-dlp -f "ba" --extract-audio --audio-format mp3'
+alias download-video='yt-dlp -f "bv" -S ext:mp4 --merge-output-format mp4'
+
+## PYTHON
+alias activate='source venv/bin/activate'

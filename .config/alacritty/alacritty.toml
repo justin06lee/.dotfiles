@@ -1,0 +1,43 @@
+[general]
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 10
+padding.y = 10
+decorations = "Buttonless"
+option_as_alt = "Both"
+startup_mode = "Maximized"
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Shift", chars = "\n" }
+]
+
+[font]
+normal.family = "Terminess Nerd Font Mono"
+size = 24
+
+[colors.primary]
+background = '#0a0a0f'
+foreground = '#c7d0d9'
+
+[colors.normal]
+black   = '#12121f'
+red     = '#ff2eaa'
+green   = '#00f0ff'
+yellow  = '#ff6e27'
+blue    = '#5a5a7a'
+magenta = '#ff2eaa'
+cyan    = '#00f0ff'
+white   = '#8890a0'
+
+[colors.bright]
+black   = '#3a3a5c'
+red     = '#ff5cc8'
+green   = '#33f5ff'
+yellow  = '#ff9254'
+blue    = '#7a7aaa'
+magenta = '#ff5cc8'
+cyan    = '#33f5ff'
+white   = '#c7d0d9'
