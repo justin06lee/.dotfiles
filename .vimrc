@@ -67,3 +67,42 @@ Plug 'The-Whiplash/phosphor-burn'
 call plug#end()
 
 colorscheme phosphor-burn
+
+" ── Format to width ─────────────────────────────────────────
+function! s:FormatToWidth() abort
+	let l:saved = {
+		\ 'tw':  &l:textwidth,
+		\ 'fo':  &l:formatoptions,
+		\ 'ai':  &l:autoindent,
+		\ 'si':  &l:smartindent,
+		\ 'ci':  &l:cindent,
+		\ 'ie':  &l:indentexpr,
+		\ 'et':  &l:expandtab,
+		\ 'fex': &l:formatexpr,
+		\ 'fp':  &l:formatprg,
+	\ }
+	try
+		setlocal textwidth=120
+		setlocal noautoindent nosmartindent nocindent indentexpr=
+		setlocal formatoptions=tq
+		setlocal formatexpr= formatprg=
+		setlocal expandtab
+		let l:view = winsaveview()
+		silent! keepjumps normal! gggqG
+		call winrestview(l:view)
+		silent! keeppatterns %s/\v(\S) {2,}(\S)/\1 \2/ge
+		nohlsearch
+	finally
+		let &l:textwidth	 = l:saved.tw
+		let &l:formatoptions = l:saved.fo
+		let &l:autoindent	= l:saved.ai
+		let &l:smartindent   = l:saved.si
+		let &l:cindent	   = l:saved.ci
+		let &l:indentexpr	= l:saved.ie
+		let &l:expandtab	 = l:saved.et
+		let &l:formatexpr	= l:saved.fex
+		let &l:formatprg	 = l:saved.fp
+	endtry
+endfunction
+
+nnoremap <silent> <leader>dtw :<C-u>call <SID>FormatToWidth()<CR>
